@@ -1,0 +1,1 @@
+select state from capital where join_time >= 1850 and join_time <= 1920;
