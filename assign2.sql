@@ -1,5 +1,25 @@
-create table students  
-    id          int, 
+/*========================================================================================================
+This is for assignment Task #1, Part #2
+=======================================================================================================*/
+/* database name  = 'assignment'
+   table list : students, advisor
+*/
+/*-------------------------------------------------------------------------------------------------------
+For table students
+------------------------------------->>>>>>
+id#, name (first and last), 
+home address (street, city, zip-code), date of birth, sex, category (e.g., sophomore, junior, graduate), 
+nationality, special needs, current status (placed/waiting) and which courses is the student registered for. 
+Optionally, one may also add additional comments for a particular student. 
+The student information pertains to those currently renting a room and those who are on the waiting list. 
+A particular student may rent a room either in the hall of residence or student flat. 
+When a student joins the University, he is assigned a member of staff who acts as his Advisor. 
+The Advisor is responsible for monitoring the student welfare and academic progress throughout his time at the University. 
+The data kept for a students Advisor includes full name, position, name of the department, phone number and office location/number. 
+We assume that there are no two advisors in the same department will have the same name. 
+-------------------------------------------------------------------------------------------------------*/
+create table students (
+    id          int indentity(100000,1), 
     first_name  varchar(30),
     last_name  varchar(30), 
     home_number  varchar(30),
@@ -11,12 +31,65 @@ create table students
     category  varchar(30), /* (e.g., sophomore, junior, graduate), */ 
     nationality  varchar(30),
     special_needs  varchar(30), 
-    current_status  varchar(30), /* (placed/waiting) */ 
+    current_status  varchar(30), /* 'placed' or 'waiting' */ 
     registered_for  varchar(30), 
-    comments  varchar(30), /* for a particular student.  */
+    comments  varchar(30) /* for a particular student.  */
 );
 
-/*
+/*-------------------------------------------------------------------------------------------------------
+For table Halls of Residence
+------------------------------------->>>>>>
+create table halls_of_residence (
+*/
+create table dom (
+    id      int identity(1,1),
+    name,   varchar(40),
+    address varchar(70), 
+    phone_number    varchar(12),
+    manager int,        -- if it is student_flats, it value is null
+    max_room    int     -- when max_room < 10 it is student flats, else it is halls of residence
+);
+/*-------------------------------------------------------------------------------------------------------
+For table room
+------------------------------------->>>>>>
+*/
+create table room (
+    room_number     int identity(100,1),
+    hall_id        int not null,
+    rental_rate     int
+);
+/*-------------------------------------------------------------------------------------------------------
+For table Students Flats
+------------------------------------->>>>>>
+*/
+create table student_flats (
+    id      int identity(100,1),
+    name,   varchar(40),
+    address varchar(70), 
+    phone_number    varchar(12),
+    max_room    int
+);
+
+/*-------------------------------------------------------------------------------------------------------
+For table leases
+------------------------------------->>>>>>
+*/
+create table leases (
+    id      int identity(1,1),
+    student_id   int,
+    hall_id      int, 
+    room_number      int,
+    signed_date   varchar(10),
+    start_date   varchar(10),
+    end_date   varchar(10)
+);
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------
+For table Advisor
+------------------------------------->>>>>>
 The student information pertains to those currently renting a room and those who are on the waiting list. 
 
 A particular student may rent a room either in the hall of residence or student flat. 
@@ -28,20 +101,16 @@ he is assigned a member of staff who acts as his Advisor.
 academic progress throughout his time at the University. 
 */
 creat table advisor (
+
 full_name, 
 position, 
 department,  /* name of department */
 phone_number,
 office_location
-office_number. /* We assume that there are no two advisors in the same department will have the same name. */
+office_number.
+); /* We assume that there are no two advisors in the same department will have the same name. */
 */
 
-Halls of Residence. 
-
-name, 
-address, 
-phone_number,
-manager,
 
 careate table rooms
 
@@ -94,7 +163,10 @@ location, /*-- (e.g., Accommodation Office or Hall). --*/ Here we assume that th
 create table courses 
 number, 
 title, 
-year, instructor, room number, and department name. Each student is associated with the courses he is registered for. 
+year, 
+instructor, 
+room_number, 
+and department name. Each student is associated with the courses he is registered for. 
 Here we assume that the course number and the department name can uniquely identify a course. 
 Contacts. 
 For each student, the office keeps a record of a contact person, which includes SIN/SSN, name (first and last), 
