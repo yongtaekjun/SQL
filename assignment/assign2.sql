@@ -37,24 +37,24 @@ create table students (
     course_id       int, 
     comments        varchar(30)  /* for a particular student.  */;
 );
-insert into students ('Jack 1','Bon 1','4168881111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 2','Bon 2','4168881111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','2','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 3','Bon 3','4168881111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','3','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 4','Bon 4','4168881111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 5','Bon 5','4168881111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 6','Bon 6','4168881111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','2','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 7','Bon 7','4168881111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','3','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 8','Bon 8','4168881111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 9','Bon 9','4168881111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 1','Sun 1','4168882111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','2','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 2','Sun 2','4168882111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','3','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 3','Sun 3','4168882111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 4','Sun 4','4168882111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 5','Sun 5','4168882111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','2','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 6','Sun 6','4168882111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','3','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 7','Sun 7','4168882111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 8','Sun 8','4168882111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 9','Sun 9','4168882111', '101 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Jack 1','Bon 1','4168881111', '101 Younge Street', 'Toronto',    'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Jack 2','Bon 2','4168881112', '102 Younge Street', 'Oakville',   'M2M3R3','1996-01-01','M','2','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Jack 3','Bon 3','4168881113', '103 Younge Street', 'Richmod Hill', 'M2M3R3','1998-01-01','M','3','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Jack 4','Bon 4','4168881114', '104 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Jack 5','Bon 5','4168881115', '105 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Jack 6','Bon 6','4168881116', '106 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','2','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Jack 7','Bon 7','4168881117', '107 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','3','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Jack 8','Bon 8','4168881118', '108 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Jack 9','Bon 9','4168881119', '109 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Eric 1','Sun 1','4168882121', '111 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','2','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Eric 2','Sun 2','4168882131', '121 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','3','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Eric 3','Sun 3','4168882141', '131 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Eric 4','Sun 4','4168882151', '141 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Eric 5','Sun 5','4168882161', '151 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','2','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Eric 6','Sun 6','4168882171', '161 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','3','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Eric 7','Sun 7','4168882181', '171 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Eric 8','Sun 8','4168882191', '181 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Eric 9','Sun 9','4168883111', '191 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
 
 
 /*-------------------------------------------------------------------------------------------------------
@@ -62,7 +62,7 @@ For table Halls of Residence
 ------------------------------------->>>>>>
 create table halls_of_residence (
 */
-create table building (
+create table buildings (
     id      int primary key,
     style   varchar( 1), -- H:Halls of Residence, F: Flats, L:Lectures, R:Restaurants, G:General, E:Etc  
     title   varchar(40),
@@ -71,6 +71,7 @@ create table building (
     zipcode varchar( 6), 
     phone   varchar(12),
     manager int        -- FK of staffs if it is student_flats, it value is null
+    
 );
 insert into building ( 100,'G','Toronto Office','425 Bloor Street 2rd floor','Toronto','M2NM2N','4161112222', 100001 );
 insert into building ( 101,'G','Schaborough Office','333 James Road','Schaborough','M2NM2D','4161112223', 100002 );
@@ -98,9 +99,9 @@ For table room
 ------------------------------------->>>>>>
 */
 create table rooms (
-    id              int primary key,
+    id              int,
     room_class      varchar(1), -- classification of the room R:Residence, L:Lecture, O:Office, M: Maintenance, W: Washroom
-    building_id     int not null,
+    buildings_id    int not null,
     title           varchar(20),
     rental_rate     int -- when the room_class is 'R'
 );
@@ -156,7 +157,6 @@ A student may rent a room in a hall or student flat for various periods of time.
 New lease agreements are negotiated at the start of each academic year with a minimum rental period of 
 one quarter and a maximum rental period of one year (including the Summer quarter). 
 Each individual lease agreement between a student and the Accommodation Office is uniquely identified using a lease number.
-
 The information pertaining to each lease includes the lease number, 
 duration of the lease (in number of quarters), name and the id# of the student, 
 room number, hall number or flat number, 
@@ -165,9 +165,9 @@ along with the date the student wishes to leave the room.
 */
 create table leases (
     id              int identity(1,1),
-    student_id      int,   -- forgine key of students
-    building_id     int,  -- forgine key of halls
-    room_number     int, -- forgin key of rooms
+    students_id      int,   -- forgine key of students
+    buildings_id     int,  -- forgine key of halls
+    rooms_number     int, -- forgin key of rooms
     signed_date     varchar(10),
     start_date      varchar(10),
     end_date        varchar(10),
@@ -187,14 +187,15 @@ if needed, the dates the first and second reminders were sent.
 */
 create table invoices (
     id                      bigint identity(100000,1),
-    lease_number            int,
+    leases_id               int,
     quarter                 int,
     issue_date              varchar(20),
     paid_date               varchar(20),
     due_date                varchar(20),
     method_of_payment       varchar(1), -- 'Q': cheque, 'D': debit or cash, 'C': credit_card
     class_of_credit_card    varchar(1), -- when method of payment is 3 (credit_card ),'V': VISA, 'M': Mster, 'A': Amex
-    credit_card_number      varchar(16) -- when method of payment is 3
+    credit_card_number      varchar(16), -- when method of payment is 3
+    foreign key (leases_id) references leases(id)
 );
 
 create table departments (
@@ -239,7 +240,9 @@ create table positions (
     department_id   int,
     id              int, -- 30: A
     title           varchar(20),
-    todo            varchar(50)
+    todo            varchar(50),
+    primary key clustered ( department_id, id ),
+    foreign key (department_id) references departments(id)
 );
 
 
@@ -260,11 +263,16 @@ create table staffs (
 
 
 create table staffs_positions (
-    staff_id        int,
-    department_id   int,
+    staffs_id        int,
+    positions_id     int,
+    departments_id   int,
     building_id     int,
     is_current      varchar(1), -- 'Y': it is current, 'N': it is past
     date_of_issue   varchar(20)
+    primary key clustered ( staffs_id, position_id ),
+    foreign key (staffs_id) references staffs(id)
+    foreign key (positions_id) references positions(id)
+    foreign key (departments_id) references departments(id)
 );
 
 
@@ -296,7 +304,6 @@ phone_number,
 office_location
 office_number.
 ); 
-
 The place number uniquely identifies each room in all halls 
 controlled by the Accommodation Office and is used when renting a room to a student. 
 -----------*/
@@ -311,25 +318,29 @@ controlled by the Accommodation Office and is used when renting a room to a stud
 create table building_inspections (
     id  int,
     building_id     int,
-    inspector       int,
+    inspector       int,    -- FK of staffs_id
     date_of_issue   varchar(20),
-    is_satisfaction varchar( 1),
+    is_satisfaction varchar( 1), -- 'Y' or 'N'
     comments        varchar(30)
 
 );
-
-
 create table courses (
     id              int, 
     title           varchar(20), 
     year            varchar(20), 
     instructor      int, 
+    building_id     int, 
     room_number     int, 
     department_id   int
 );
 
+create table courses_students (
+    courses_id      int, 
+    student_id      int, 
+    registered_date varchar(20), 
+);
+
 create table contacts (
-    id              int,
     student_id      int,
     sin             varchar(20),
     first_name      varchar(20),
