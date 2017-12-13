@@ -1,4 +1,4 @@
-/*========================================================================================================
+*========================================================================================================
 This is for assignment Task #1, Part #2
 =======================================================================================================*/
 /* database name  = 'assignment'
@@ -22,6 +22,7 @@ We assume that there are no two advisors in the same department will have the sa
 -------------------------------------------------------------------------------------------------------*/
 create table students (
     id              int indentity(100000,1), 
+    department_id   int,
     first_name      varchar(30),
     last_name       varchar(30), 
     phone           varchar(12),
@@ -30,31 +31,32 @@ create table students (
     zipcode         varchar( 6), 
     dob             varchar(11), 
     sex             varchar( 1), 
+    advisor         int, 
+    contacts_sin    int, 
     category        varchar( 1), /* 1=sophomore, junior, 9=graduate), */ 
     nationality     varchar(30),
     special_needs   varchar(30), 
     current_status  varchar( 8), /* 'placed' or 'waiting' */ 
-    course_id       int, 
     comments        varchar(30)  /* for a particular student.  */;
 );
-insert into students ('Jack 1','Bon 1','4168881111', '101 Younge Street', 'Toronto',    'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 2','Bon 2','4168881112', '102 Younge Street', 'Oakville',   'M2M3R3','1996-01-01','M','2','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 3','Bon 3','4168881113', '103 Younge Street', 'Richmod Hill', 'M2M3R3','1998-01-01','M','3','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 4','Bon 4','4168881114', '104 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 5','Bon 5','4168881115', '105 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 6','Bon 6','4168881116', '106 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','2','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 7','Bon 7','4168881117', '107 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','3','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 8','Bon 8','4168881118', '108 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Jack 9','Bon 9','4168881119', '109 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 1','Sun 1','4168882121', '111 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','2','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 2','Sun 2','4168882131', '121 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','3','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 3','Sun 3','4168882141', '131 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 4','Sun 4','4168882151', '141 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 5','Sun 5','4168882161', '151 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','2','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 6','Sun 6','4168882171', '161 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','3','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 7','Sun 7','4168882181', '171 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 8','Sun 8','4168882191', '181 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
-insert into students ('Eric 9','Sun 9','4168883111', '191 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting',100,'No comments');
+insert into students ('Jack 1','Bon 1','4168881111', '101 Younge Street', 'Toronto',    'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting','No comments');
+insert into students ('Jack 2','Bon 2','4168881112', '102 Younge Street', 'Oakville',   'M2M3R3','1996-01-01','M','2','Canada','NO Special','waiting','No comments');
+insert into students ('Jack 3','Bon 3','4168881113', '103 Younge Street', 'Richmod Hill', 'M2M3R3','1998-01-01','M','3','Canada','NO Special','waiting','No comments');
+insert into students ('Jack 4','Bon 4','4168881114', '104 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting','No comments');
+insert into students ('Jack 5','Bon 5','4168881115', '105 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting','No comments');
+insert into students ('Jack 6','Bon 6','4168881116', '106 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','2','Canada','NO Special','waiting','No comments');
+insert into students ('Jack 7','Bon 7','4168881117', '107 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','3','Canada','NO Special','waiting','No comments');
+insert into students ('Jack 8','Bon 8','4168881118', '108 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting','No comments');
+insert into students ('Jack 9','Bon 9','4168881119', '109 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting','No comments');
+insert into students ('Eric 1','Sun 1','4168882121', '111 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','2','Canada','NO Special','waiting','No comments');
+insert into students ('Eric 2','Sun 2','4168882131', '121 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','3','Canada','NO Special','waiting','No comments');
+insert into students ('Eric 3','Sun 3','4168882141', '131 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting','No comments');
+insert into students ('Eric 4','Sun 4','4168882151', '141 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting','No comments');
+insert into students ('Eric 5','Sun 5','4168882161', '151 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','2','Canada','NO Special','waiting','No comments');
+insert into students ('Eric 6','Sun 6','4168882171', '161 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','3','Canada','NO Special','waiting','No comments');
+insert into students ('Eric 7','Sun 7','4168882181', '171 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','4','Canada','NO Special','waiting','No comments');
+insert into students ('Eric 8','Sun 8','4168882191', '181 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting','No comments');
+insert into students ('Eric 9','Sun 9','4168883111', '191 Younge Street', 'Toronto', 'M2M3R3','1995-01-01','M','1','Canada','NO Special','waiting','No comments');
 
 
 /*-------------------------------------------------------------------------------------------------------
@@ -64,34 +66,31 @@ create table halls_of_residence (
 */
 create table buildings (
     id      int primary key,
-    style   varchar( 1), -- H:Halls of Residence, F: Flats, L:Lectures, R:Restaurants, G:General, E:Etc  
+    purpose varchar( 1), -- H:Halls of Residence, F: Flats, L:Lectures, R:Restaurants, G:General, E:Etc  
     title   varchar(40),
     street  varchar(30), 
     city    varchar(30), 
-    zipcode varchar( 6), 
-    phone   varchar(12),
-    manager int        -- FK of staffs if it is student_flats, it value is null
-    
+    zipcode varchar( 6) 
 );
-insert into building ( 100,'G','Toronto Office','425 Bloor Street 2rd floor','Toronto','M2NM2N','4161112222', 100001 );
-insert into building ( 101,'G','Schaborough Office','333 James Road','Schaborough','M2NM2D','4161112223', 100002 );
-insert into building ( 103,'G','Mississaga Office','333 Brad Road','Mississaga','M2NM2D','4161112224', 100003 );
+insert into building ( 100,'G','Toronto HQ','425 Bloor Street 2rd floor','Toronto','M2NM2N' );
+insert into building ( 101,'G','Schaborough HQ','333 James Road','Schaborough','M2NM2D' );
+insert into building ( 102,'G','Mississaga HQ','533 Brad Road','Mississaga','M2NM2D' );
 
-insert into building ( 111,'H','Toronto Dome #1','111 Bloor Street','Toronto','M2NM2N','9051112222', 100020 );
-insert into building ( 112,'H','Toronto Dome #2','425 Young Street','Toronto','M2NM2N','9051112223', 100021 );
-insert into building ( 113,'H','North York #1','176 Finch Avenue East','North York','M2NM2N','9051112224', 100022 );
-insert into building ( 114,'H','Schaborough #1','425 Markham Road','Schaborough','M2NM2N','9051112225', 100023 );
+-- this is for residencial building --------------------------------------------------
+insert into building ( 111,'H','Toronto Hall #1','111 Bloor Street','Toronto','M2NM2N' );
+insert into building ( 112,'H','Toronto Hall #2','425 Young Street','Toronto','M2NM2N' );
+insert into building ( 113,'H','North York Hall #1','176 Finch Avenue East','North York','M2NM2N' );
+insert into building ( 114,'H','Schaborough Hall #1','425 Markham Road','Schaborough','M2NM2N' );
 
-insert into building ( 201,'F','Flat #1','425 Bloor Street 3rd floor','Toronto','M2NM2N','9051113221', 0 );
-insert into building ( 202,'F','Flat #1','425 Bloor Street 3rd floor','Toronto','M2NM2N','9051113222', 0 );
-insert into building ( 203,'F','Flat #1','425 Bloor Street 3rd floor','Toronto','M2NM2N','9051113223', 0 );
-insert into building ( 204,'F','Flat #1','425 Bloor Street 3rd floor','Toronto','M2NM2N','9051113224', 0 );
-insert into building ( 205,'F','Flat #1','425 Bloor Street 3rd floor','Toronto','M2NM2N','9051113225', 0 );
-insert into building ( 206,'F','Flat #1','425 Bloor Street 3rd floor','Toronto','M2NM2N','9051113226', 0 );
-insert into building ( 207,'F','Flat #1','425 Bloor Street 3rd floor','Toronto','M2NM2N','9051113227', 0 );
-insert into building ( 208,'F','Flat #1','425 Bloor Street 3rd floor','Toronto','M2NM2N','9051113228', 0 );
-
-
+insert into building ( 201,'F','Flat #201','201 Bloor Street 3rd floor','Toronto','M2NM2N');
+insert into building ( 202,'F','Flat #202','202 Bloor Street 3rd floor','Toronto','M2NM2N');
+insert into building ( 203,'F','Flat #203','203 Bloor Street 3rd floor','Toronto','M2NM2N');
+insert into building ( 204,'F','Flat #204','204 Bloor Street 3rd floor','Toronto','M2NM2N');
+insert into building ( 205,'F','Flat #205','205 Bloor Street 3rd floor','Toronto','M2NM2N');
+insert into building ( 206,'F','Flat #206','206 Bloor Street 3rd floor','Toronto','M2NM2N');
+insert into building ( 207,'F','Flat #207','207 Bloor Street 3rd floor','Toronto','M2NM2N');
+insert into building ( 208,'F','Flat #208','208 Bloor Street 3rd floor','Toronto','M2NM2N');
+insert into building ( 209,'F','Flat #209','209 Bloor Street 3rd floor','Toronto','M2NM2N');
 
 
 /*-------------------------------------------------------------------------------------------------------
@@ -99,14 +98,36 @@ For table room
 ------------------------------------->>>>>>
 */
 create table rooms (
-    id              int,
-    room_class      varchar(1), -- classification of the room R:Residence, L:Lecture, O:Office, M: Maintenance, W: Washroom
+    id              int primary key,
+    purpose         varchar(1), -- classification of the room R:Residence, L:Lecture, O:Office, M: Maintenance, W: Washroom
     buildings_id    int not null,
     title           varchar(20),
     rental_rate     int -- when the room_class is 'R'
 );
-insert into rooms (1200, 'O', 100, 'Accomodation Office', 0 );
+insert into rooms (1001, 'O', 100, 'Accomodation Office', 0 );
+insert into rooms (1002, 'L', 100, 'Class 1002', 0 );
+insert into rooms (1003, 'L', 100, 'Class 1003', 0 );
+insert into rooms (1004, 'L', 100, 'Class 1004', 0 );
+insert into rooms (1005, 'L', 100, 'Class 1005', 0 );
+insert into rooms (1006, 'L', 100, 'Class 1006', 0 );
+insert into rooms (1007, 'L', 100, 'Class 1007', 0 );
 
+insert into rooms (1012, 'L', 101, 'Class 1012', 0 );
+insert into rooms (1013, 'L', 101, 'Class 1013', 0 );
+insert into rooms (1014, 'L', 101, 'Class 1014', 0 );
+insert into rooms (1015, 'L', 101, 'Class 1015', 0 );
+insert into rooms (1016, 'L', 101, 'Class 1016', 0 );
+insert into rooms (1017, 'L', 101, 'Class 1017', 0 );
+
+
+insert into rooms (1022, 'L', 102, 'Class 1022', 0 );
+insert into rooms (1023, 'L', 102, 'Class 1023', 0 );
+insert into rooms (1024, 'L', 102, 'Class 1024', 0 );
+insert into rooms (1025, 'L', 102, 'Class 1025', 0 );
+insert into rooms (1026, 'L', 102, 'Class 1026', 0 );
+insert into rooms (1027, 'L', 102, 'Class 1027', 0 );
+
+insert into rooms (1200, 'O', 111, 'Hall #1 Office', 0 );
 insert into rooms (1201, 'R', 111, '1201', 2400 );
 insert into rooms (1202, 'R', 111, '1202', 2600 );
 insert into rooms (1203, 'R', 111, '1203', 2400 );
@@ -123,15 +144,33 @@ insert into rooms (1305, 'R', 112, '1305', 2600 );
 insert into rooms (1306, 'R', 112, '1306', 2400 );
 insert into rooms (1307, 'R', 112, '1307', 2400 );
 
+insert into rooms (1301, 'R', 113, '1301', 2400 );
+insert into rooms (1302, 'R', 113, '1302', 2600 );
+insert into rooms (1303, 'R', 113, '1303', 2400 );
+insert into rooms (1304, 'R', 113, '1304', 2400 );
+insert into rooms (1305, 'R', 113, '1305', 2600 );
+insert into rooms (1306, 'R', 113, '1306', 2400 );
+insert into rooms (1307, 'R', 113, '1307', 2400 );
+
+insert into rooms (1301, 'R', 114, '1301', 2400 );
+insert into rooms (1302, 'R', 114, '1302', 2600 );
+insert into rooms (1303, 'R', 114, '1303', 2400 );
+insert into rooms (1304, 'R', 114, '1304', 2400 );
+insert into rooms (1305, 'R', 114, '1305', 2600 );
+insert into rooms (1306, 'R', 114, '1306', 2400 );
+insert into rooms (1307, 'R', 114, '1307', 2400 );
 
 insert into rooms (1401, 'R', 201, '1401', 3100 );
 insert into rooms (1402, 'R', 201, '1402', 3100 );
+
 insert into rooms (1403, 'R', 202, '1403', 3100 );
 insert into rooms (1404, 'R', 202, '1404', 3100 );
+
 insert into rooms (1405, 'R', 203, '1405', 3100 );
 insert into rooms (1406, 'R', 203, '1406', 3100 );
 insert into rooms (1407, 'R', 203, '1407', 3100 );
 insert into rooms (1408, 'R', 203, '1408', 3100 );
+
 insert into rooms (1409, 'R', 204, '1409', 3100 );
 insert into rooms (1410, 'R', 204, '1410', 3100 );
 
@@ -139,6 +178,7 @@ insert into rooms (1411, 'R', 205, '1411', 3100 );
 insert into rooms (1412, 'R', 205, '1412', 3100 );
 insert into rooms (1413, 'R', 205, '1413', 3100 );
 insert into rooms (1414, 'R', 205, '1414', 3100 );
+
 insert into rooms (1415, 'R', 206, '1415', 3100 );
 insert into rooms (1416, 'R', 206, '1416', 3100 );
 
@@ -200,41 +240,18 @@ create table invoices (
 
 create table departments (
     id              int,  -- 100: Accomodation, 101: Building Maintanance, 102: Administration, 103: Financing
-    sub_id          int,
-    title           varchar(20),
-    sub_title       varchar(20)
+    title           varchar(30)
 );
-
-insert into departments (100,0,'Marketing','CEO');
-insert into departments (100,2,'Marketing','Marketing');
-
-insert into departments (112,0,'Building Maintanance','Clenning');
-insert into departments (112,1,'Building Maintanance','HVAC');
-insert into departments (112,2,'Building Maintanance','Electric');
-insert into departments (112,3,'Building Maintanance','Inspection');
-insert into departments (112,4,'Building Maintanance','Network');
-insert into departments (112,5,'Building Maintanance','Computer');
-
-insert into departments (210,0,'Administration','Administration');
-insert into departments (210,1,'Administration','Financing');
-insert into departments (210,2,'Administration','Counselling');
-insert into departments (210,3,'Administration','Attendance');
-insert into departments (210,4,'Administration','Auditing');
-insert into departments (210,5,'Administration','Acomodation');
-insert into departments (210,6,'Administration','Advisor');
-
-insert into departments (310,0,'Health Care','Health Care');
-insert into departments (410,0,'Application Developer','Application Developer');
-insert into departments (410,1,'Application Developer','WEB Programming');
-insert into departments (410,2,'Application Developer','Android Programming');
-insert into departments (410,3,'Application Developer','iOS Programming');
-insert into departments (412,0,'Game Developer','Game Developer');
-insert into departments (412,1,'Game Developer','Game Design');
-insert into departments (412,2,'Game Developer','3D Graphic Design');
-insert into departments (412,3,'Game Developer','Animation Programmer');
-insert into departments (412,4,'Game Developer','Sound Design');
-insert into departments (412,5,'Game Developer','Server Programming');
-insert into departments (412,6,'Instructor','Dentist');
+insert into departments (101,'Administration');
+insert into departments (102,'Marketing');
+insert into departments (103,'Building Maintanance');
+insert into departments (310,'Application Developer');
+insert into departments (312,'Game Developer');
+insert into departments (313,'Graphic Designer');
+insert into departments (315,'Data Scientist');
+insert into departments (321,'Network Administrator');
+insert into departments (322,'Database Administrator');
+insert into departments (401,'Health Care');
 
 create table positions (
     department_id   int,
@@ -249,17 +266,28 @@ create table positions (
 
 
 create table staffs (
-    id              int identity(100000,1),
-    first_name      varchar(20),
-    last_name       varchar(20),
+    id              int primary key,
+    first_name      varchar(30),
+    last_name       varchar(30),
     office_phone    varchar(11),
     cell_phone      varchar(11),
-    sex             varchar(1),
-    street          varchar(20),
-    city            varchar(20),
-    zip             varchar(6),
-    dob             varchar(20)
+    sex             varchar( 1),
+    street          varchar(30),
+    city            varchar(30),
+    zipcode         varchar( 6),
+    dob             varchar( 8)
 );
+
+insert into staffs ( 1101,'Staff 1101', 'Staff Last 1101','4161111101','4162221101','F','1101 XXX Street', 'Toronto','M1M3N4','19901101' )
+insert into staffs ( 1102,'Staff 1102', 'Staff Last 1102','4161111102','4162221102','F','1102 XXX Street', 'Toronto','M1M3N4','19901102' )
+insert into staffs ( 1103,'Staff 1103', 'Staff Last 1103','4161111103','4162221103','F','1103 XXX Street', 'Toronto','M1M3N4','19901103' )
+insert into staffs ( 1104,'Staff 1104', 'Staff Last 1104','4161111104','4162221104','F','1104 XXX Street', 'Toronto','M1M3N4','19901104' )
+insert into staffs ( 1105,'Staff 1105', 'Staff Last 1105','4161111105','4162221105','F','1105 XXX Street', 'Toronto','M1M3N4','19901105' )
+insert into staffs ( 1106,'Staff 1106', 'Staff Last 1106','4161111106','4162221106','F','1106 XXX Street', 'Toronto','M1M3N4','19901106' )
+insert into staffs ( 1107,'Staff 1107', 'Staff Last 1107','4161111107','4162221107','F','1107 XXX Street', 'Toronto','M1M3N4','19901107' )
+insert into staffs ( 1108,'Staff 1108', 'Staff Last 1108','4161111108','4162221108','F','1108 XXX Street', 'Toronto','M1M3N4','19901108' )
+insert into staffs ( 1109,'Staff 1109', 'Staff Last 1109','4161111109','4162221109','F','1109 XXX Street', 'Toronto','M1M3N4','19901109' )
+insert into staffs ( 1110,'Staff 1110', 'Staff Last 1110','4161111110','4162221110','F','1110 XXX Street', 'Toronto','M1M3N4','19901110' )
 
 
 create table staffs_positions (
@@ -319,11 +347,23 @@ create table building_inspections (
     id  int,
     building_id     int,
     inspector       int,    -- FK of staffs_id
-    date_of_issue   varchar(20),
+    excution_date   varchar(20),
     is_satisfaction varchar( 1), -- 'Y' or 'N'
     comments        varchar(30)
 
 );
+create table building_managers (
+    building_id     int,
+    staffs_id       int,    -- FK of staffs_id
+    role_title   varchar(20)
+    --foreign key building_id references buildings.id
+);
+insert into building_managers ( 101, 100005, 'Manager' );
+insert into building_managers ( 101, 100006, 'Assistant Manager' );
+insert into building_managers ( 101, 100007, 'Administrator' );
+insert into building_managers ( 101, 100008, 'Cleaner' );
+insert into building_managers ( 101, 100009, 'Electrician' );
+
 create table courses (
     id              int, 
     title           varchar(20), 
